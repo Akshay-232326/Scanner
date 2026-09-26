@@ -7,9 +7,13 @@ const FPS = 60;
 
 const scannerWidth = 60;
 const scannerHeight = 800;
-
 let scannerX = 0;
-let scannerY = 0;
+
+const objectWidth = 100;
+const objectHeight = 800;
+const objectX = 300;
+
+
 let speed = -1;
 
 
@@ -36,7 +40,10 @@ function draw() {
     r.BeginDrawing();
     r.ClearBackground(r.BLACK);
 
-    r.DrawRectangle(scannerX, scannerY, scannerWidth, scannerHeight, r.WHITE);
+    r.DrawRectangle(objectX, 0, objectWidth, objectHeight, r.SKYBLUE);
+
+    r.DrawRectangle(scannerX, 0, scannerWidth, scannerHeight, r.WHITE);
+
 
     r.EndDrawing();
 }
