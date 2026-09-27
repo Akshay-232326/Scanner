@@ -47,7 +47,7 @@ function draw() {
 
     const object3Width = 1000;
     const object3Height = 60;
-    const object3Y = 400;
+    const object3Y = 300;
 
     const overlap1 = geometry.isOverlap(scanner1X, object1X, scanner1Width, object1Width);
     const overlap2 = geometry.isOverlap(scanner1X, object2X, scanner1Width, object2Width);
