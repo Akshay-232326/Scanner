@@ -4,9 +4,9 @@ const geometry = require("./geometry")
 const screenWidth = 1000;
 const screenHeight = 800;
 
-const scannerWidth = 60;
-const scannerHeight = 800;
-let scannerX = 0;
+const scanner1Width = 60;
+const scanner1Height = 800;
+let scanner1X = 0;
 
 let speed = 3;
 
@@ -22,11 +22,11 @@ function setup() {
 }
 
 function update() {
-    if (scannerX < 0) {
+    if (scanner1X < 0) {
         speed = -speed;
     }
-    scannerX = scannerX + speed;
-    if (scannerX >= (screenWidth - scannerWidth)) {
+    scanner1X = scanner1X + speed;
+    if (scanner1X >= (screenWidth - scanner1Width)) {
         speed = -speed;
     }
 }
@@ -40,8 +40,8 @@ function draw() {
     const object2Height = 800;
     const object2X = 700;
 
-    const collosion1 = geometry.isCollision(scannerX, object1X, scannerWidth, object1Width);
-    const collosion2 = geometry.isCollision(scannerX, object2X, scannerWidth, object2Width);
+    const collosion1 = geometry.isCollision(scanner1X, object1X, scanner1Width, object1Width);
+    const collosion2 = geometry.isCollision(scanner1X, object2X, scanner1Width, object2Width);
 
     const color = (collosion1 || collosion2) ? r.RED : r.WHITE;
 
@@ -52,7 +52,7 @@ function draw() {
     r.DrawRectangle(object1X, 0, object1Width, object1Height, r.SKYBLUE);
     r.DrawRectangle(object2X, 0, object2Width, object2Height, r.SKYBLUE);
 
-    r.DrawRectangle(scannerX, 0, scannerWidth, scannerHeight, color);
+    r.DrawRectangle(scanner1X, 0, scanner1Width, scanner1Height, color);
 
     r.EndDrawing();
 }
