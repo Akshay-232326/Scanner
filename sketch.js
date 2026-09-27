@@ -45,6 +45,10 @@ function draw() {
     const object2Height = 800;
     const object2X = 700;
 
+    const object3Width = 1000;
+    const object3Height = 60;
+    const object3Y = 400;
+
     const overlap1 = geometry.isOverlap(scanner1X, object1X, scanner1Width, object1Width);
     const overlap2 = geometry.isOverlap(scanner1X, object2X, scanner1Width, object2Width);
     const overlap3 = geometry.isOverlap(scanner2X, object1X, scanner2Width, object1Width);
@@ -60,6 +64,7 @@ function draw() {
 
     r.DrawRectangle(object1X, 0, object1Width, object1Height, r.SKYBLUE);
     r.DrawRectangle(object2X, 0, object2Width, object2Height, r.SKYBLUE);
+    r.DrawRectangle(0, object3Y, object3Width, object3Height, r.SKYBLUE);
 
     const scanner1Height = 800;
     const scanner2Height = 800;
