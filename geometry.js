@@ -1,6 +1,6 @@
-function isOverlap(scannerX, objectX, scannerWidth, objectWidth) {
-    return scannerX <= (objectX + objectWidth) &&
-        (scannerX + scannerWidth) >= objectX;
+function isOverlap(scannerX, particleX, scannerWidth, particleWidth) {
+    return scannerX <= (particleX + particleWidth) &&
+        (scannerX + scannerWidth) >= particleX;
 }
 function calSpeed(scannerX, scannerWidth, scannerSt, scannerEnd, speed) {
     if (scannerX < scannerSt) {
