@@ -24,6 +24,10 @@ function setup() {
     r.SetTargetFPS(60);
 }
 
+function changeColour(dX, pX, dWidth, pWidth) {
+    return geometry.isOverlap(dX, pX, dWidth, pWidth) ? r.RED : r.WHITE;
+}
+
 function update() {
     d1.velocity = geometry.calcVelocity(d1.x, d1.width, 0, WIDTH, d1.velocity);
     d1.x = geometry.movingDetector(d1.x, d1.velocity);
@@ -34,7 +38,7 @@ function draw() {
     r.ClearBackground(r.BLACK);
 
     drawRange(p1X, 0, p1Width, HEIGHT, r.SKYBLUE);
-    drawRange(d1.x, 0, d1.width, HEIGHT, r.WHITE);
+    drawRange(d1.x, 0, d1.width, HEIGHT, changeColour(d1.x, p1X, d1.width, p1Width));
 
     r.EndDrawing();
 }
