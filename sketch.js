@@ -31,8 +31,11 @@ function changeColour(dX, dWidth, p1X, p1Width, p2X, p2Width) {
 }
 
 function update() {
-    d1.velocity = detector.calcVelocity(d1.x, d1.width, 0, WIDTH, d1.velocity);
+    d1.velocity = detector.calcVelocity(d1.x, d1.width, 0, WIDTH / 2, d1.velocity);
     d1.x = detector.movingDetector(d1.x, d1.velocity);
+
+    d2.velocity = detector.calcVelocity(d2.x, d2.width, WIDTH / 2, WIDTH, d2.velocity);
+    d2.x = detector.movingDetector(d2.x, d2.velocity);
 }
 
 function draw() {
@@ -41,7 +44,9 @@ function draw() {
 
     drawRange(p1X, 0, p1Width, HEIGHT, r.SKYBLUE);
     drawRange(p2X, 0, p2Width, HEIGHT, r.SKYBLUE);
+
     drawRange(d1.x, 0, d1.width, HEIGHT, changeColour(d1.x, d1.width, p1X, p1Width, p2X, p2Width));
+    drawRange(d2.x, 0, d2.width, HEIGHT, changeColour(d2.x, d2.width, p1X, p1Width, p2X, p2Width))
 
     r.EndDrawing();
 }
