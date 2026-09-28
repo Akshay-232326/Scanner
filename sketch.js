@@ -7,7 +7,9 @@ const d3 = require("./d3.js");
 const WIDTH = 1000;
 const HEIGHT = 800;
 
-
+function drawRange(x, y, width, height, colour) {
+    r.DrawRectangle(x, y, width, height, colour);
+}
 
 function running() {
     return !r.WindowShouldClose();
@@ -29,7 +31,7 @@ function draw() {
     r.ClearBackground(r.BLACK);
 
 
-    r.DrawRectangle(d1.x, 0, d1.width, HEIGHT, r.WHITE);
+    drawRange(d1.x, 0, d1.width, HEIGHT, r.WHITE);
 
     r.EndDrawing();
 }
