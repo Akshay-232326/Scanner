@@ -26,8 +26,8 @@ function setup() {
     r.SetTargetFPS(60);
 }
 
-function changeColour(dX, p1X, dWidth, p1Width, p2X, p2Width) {
-    return detector.isOverlap(dX, p1X, dWidth, p1Width, p2X, p2Width) ? r.RED : r.WHITE;
+function changeColour(dX, dWidth, p1X, p1Width, p2X, p2Width) {
+    return detector.isOverlap(dX, dWidth, p1X, p1Width, p2X, p2Width) ? r.RED : r.WHITE;
 }
 
 function update() {
@@ -41,7 +41,7 @@ function draw() {
 
     drawRange(p1X, 0, p1Width, HEIGHT, r.SKYBLUE);
     drawRange(p2X, 0, p2Width, HEIGHT, r.SKYBLUE);
-    drawRange(d1.x, 0, d1.width, HEIGHT, changeColour(d1.x, p1X, d1.width, p1Width, p2X, p2Width));
+    drawRange(d1.x, 0, d1.width, HEIGHT, changeColour(d1.x, d1.width, p1X, p1Width, p2X, p2Width));
 
     r.EndDrawing();
 }
