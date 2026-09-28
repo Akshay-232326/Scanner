@@ -21,7 +21,12 @@ function calcVelocity(x, width, start, end, velocity) {
     return isDOutOfBound(x, width, start, end) ? -velocity : velocity;
 }
 
+function movingDetector(x, velocity) {
+    return x + velocity;
+}
+
 module.exports = {
     calcVelocity,
+    movingDetector,
 
 }

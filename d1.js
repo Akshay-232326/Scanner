@@ -1,7 +1,7 @@
 let x = 0;
 const y = 0;
 const width = 60;
-let velocity = 2;
+let velocity = 3;
 
 
 module.exports = {
