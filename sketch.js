@@ -9,8 +9,12 @@ const HEIGHT = 800;
 
 const p1X = 300;
 const p1Width = 80;
+
 const p2X = 600;
 const p2Width = 80;
+
+const p3Y = 500;
+const p3Hieght = 80;
 
 function drawRange(x, y, width, height, colour) {
     r.DrawRectangle(x, y, width, height, colour);
@@ -44,6 +48,7 @@ function draw() {
 
     drawRange(p1X, 0, p1Width, HEIGHT, r.SKYBLUE);
     drawRange(p2X, 0, p2Width, HEIGHT, r.SKYBLUE);
+    drawRange(0, p3Y, WIDTH, p3Hieght, r.SKYBLUE);
 
     drawRange(d1.x, 0, d1.width, HEIGHT, changeColour(d1.x, d1.width, p1X, p1Width, p2X, p2Width));
     drawRange(d2.x, 0, d2.width, HEIGHT, changeColour(d2.x, d2.width, p1X, p1Width, p2X, p2Width))
